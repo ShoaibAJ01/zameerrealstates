@@ -12,13 +12,17 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "https://zameerrealstate.vercel.app",
-    methods: ["GET", "POST"]
+    origin: ["http://localhost:5173", "https://zameerrealstate.vercel.app"],
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5173", "https://zameerrealstate.vercel.app"],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
