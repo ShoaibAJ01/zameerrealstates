@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "https://zameerrealstate.vercel.app"],
+    origin: ["http://localhost:5173", "https://zameerrealstate.vercel.app", "https://realstate-backend-af0ddc08c0e6.herokuapp.com"],
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -20,7 +20,7 @@ const io = new Server(server, {
 
 // Middleware
 app.use(cors({
-  origin: ["http://localhost:5173", "https://zameerrealstate.vercel.app"],
+  origin: ["http://localhost:5173", "https://zameerrealstate.vercel.app", "https://realstate-backend-af0ddc08c0e6.herokuapp.com"],
   credentials: true
 }));
 app.use(express.json());
